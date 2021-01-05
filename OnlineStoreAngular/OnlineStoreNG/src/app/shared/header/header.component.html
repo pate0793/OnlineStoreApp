@@ -1,0 +1,15 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="active"><a href="#"><img src="../assets/Photos/shopping-cart.png" width="25px" height="25px"></a></li>      
+      </ul>
+    </div>
+    <div class="form-inline" *ngIf="userInfo === null">
+      <a class="btn btn-outline-secondary" [routerLink]="['/Signup']" type="button">Register</a>
+      <a class="btn btn-outline-success" [routerLink]="['/Login']"  type="button">Login</a>
+    </div>
+    <div class="form-inline" *ngIf="userInfo !== null">
+      <p>Welcome {{userInfo[0].User_Name}}</p>
+      <a class="btn btn-outline-danger" (click)="logout()"  type="button">Log Out</a>
+    </div>
+</nav>

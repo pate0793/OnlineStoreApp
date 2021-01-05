@@ -1,0 +1,22 @@
+<div class="signup-form">
+    <form #loginForm="ngForm" (ngSubmit)="login()">
+		<h2>Login</h2>
+		<p class="hint-text">Sign In into your account to procced</p>
+        <div class="form-group">
+        	<input type="User_Id" [ngClass]="{ 'is-invalid': loginForm.touched && User_Id.invalid }" [(ngModel)]="model.User_Id" class="form-control" #User_Id="ngModel" name="User_Id" placeholder="Your Id" required>
+            <span class="invalid-feedback">You must enter Email !!</span>
+        </div>
+		<div class="form-group">
+            <input type="User_Password" [ngClass]="{ 'is-invalid': loginForm.touched && User_Password.invalid }" [(ngModel)]="model.User_Password" class="form-control" #User_Password="ngModel" name="User_Password" placeholder="Password" required>
+            <span class="invalid-feedback">You must enter Password !!</span>
+        </div>
+      
+		<div class="form-group">
+            <button type="submit" [disabled]="loginForm.invalid" class="btn btn-success btn-lg btn-block">Sign In</button>
+        </div>
+        <div *ngIf="errorMessage === true && loginForm.submitted" class="alert alert-danger" role="alert">
+            You have entered Invalid Id/Password
+        </div>
+    </form>
+	<div class="text-center"><a [routerLink]="['/Signup']">Want to Register ?</a></div>
+</div>

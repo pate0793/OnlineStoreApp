@@ -1,0 +1,12 @@
+<div class="card" style="margin-top: 20px;">
+    <img class="card-img-top" src="../../assets/Photos/productImages/{{productItem.Product_Id}}.jpg"  height="250px" alt="{{productItem.Name}}">
+    <div class="card-body">
+        <h5>{{productItem.Name}}</h5>
+        <p>$ {{productItem.Price}}</p>
+        <button
+            type="button"
+            class="btn btn-sm btn-primary product-btn"
+            (click)="handleAddToCart()"
+        >Add To Cart</button>
+    </div>
+</div>
